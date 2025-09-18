@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  @apply bg-gradient-to-br from-blue-200 via-purple-100 to-pink-200;
+}
