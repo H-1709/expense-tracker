@@ -20,7 +20,7 @@ function App() {
   };
 
   return (
-    <div className="p-6">
+    <div className="min-h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-6">
       <h1 className="text-2xl font-bold text-center mb-6">My Expense Tracker</h1>
 
       {/* Form */}
