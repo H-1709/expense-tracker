@@ -20,38 +20,42 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-6">
-      <h1 className="text-2xl font-bold text-center mb-6">My Expense Tracker</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-200 via-purple-100 to-pink-200">
+      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-lg">
+        <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">
+          My Expense Tracker
+        </h1>
 
-      {/* Form */}
-      <form
-        onSubmit={addExpense}
-        className="flex gap-2 mb-6 justify-center"
-      >
-        <input
-          type="text"
-          placeholder="Category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="border p-2 rounded"
-        />
-        <input
-          type="number"
-          placeholder="Amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          className="border p-2 rounded"
-        />
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+        {/* Form */}
+        <form
+          onSubmit={addExpense}
+          className="flex gap-2 mb-6 justify-center"
         >
-          Add
-        </button>
-      </form>
+          <input
+            type="text"
+            placeholder="Category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="border p-2 rounded w-1/3 focus:ring-2 focus:ring-blue-400"
+          />
+          <input
+            type="number"
+            placeholder="Amount"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            className="border p-2 rounded w-1/3 focus:ring-2 focus:ring-blue-400"
+          />
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition"
+          >
+            Add
+          </button>
+        </form>
 
-      {/* Chart */}
-      <ExpensePieChart expenses={expenses} />
+        {/* Chart */}
+        <ExpensePieChart expenses={expenses} />
+      </div>
     </div>
   );
 }
