@@ -9,19 +9,25 @@ import {
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const ExpensePieChart = () => {
-  // Dummy test data
+const ExpensePieChart = ({ expenses }) => {
+  // Group by category
+  const categories = {};
+  expenses.forEach((exp) => {
+    categories[exp.category] = (categories[exp.category] || 0) + exp.amount;
+  });
+
   const data = {
-    labels: ["Food", "Transport", "Shopping", "Bills", "Entertainment"],
+    labels: Object.keys(categories),
     datasets: [
       {
-        data: [500, 200, 300, 150, 100],
+        data: Object.values(categories),
         backgroundColor: [
           "#FF6384",
           "#36A2EB",
           "#FFCE56",
           "#4BC0C0",
-          "#9966FF"
+          "#9966FF",
+          "#FF9F40"
         ],
         borderWidth: 1
       }
