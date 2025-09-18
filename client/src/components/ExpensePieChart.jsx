@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Pie } from "react-chartjs-2";
-import axios from "axios";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -11,32 +10,18 @@ import {
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const ExpensePieChart = () => {
-  const [expenses, setExpenses] = useState([]);
-
-  useEffect(() => {
-    axios.get("http://localhost:5000/api/expenses") // adjust API if different
-      .then(res => setExpenses(res.data))
-      .catch(err => console.error(err));
-  }, []);
-
-  // Group by category
-  const categories = {};
-  expenses.forEach(exp => {
-    categories[exp.category] = (categories[exp.category] || 0) + exp.amount;
-  });
-
+  // Dummy test data
   const data = {
-    labels: Object.keys(categories),
+    labels: ["Food", "Transport", "Shopping", "Bills", "Entertainment"],
     datasets: [
       {
-        data: Object.values(categories),
+        data: [500, 200, 300, 150, 100],
         backgroundColor: [
           "#FF6384",
           "#36A2EB",
           "#FFCE56",
           "#4BC0C0",
-          "#9966FF",
-          "#FF9F40"
+          "#9966FF"
         ],
         borderWidth: 1
       }
