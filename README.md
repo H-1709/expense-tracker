@@ -1,57 +1,66 @@
-# expense-tracker
+Expense Tracker (MERN)
 
-✨ Features
+This is my first MERN (MongoDB, Express, React, Node.js) project.
+I built it as a learning project to understand the full-stack development process. The app helps track expenses by storing them in a MongoDB database and displaying them through a simple UI.
 
-📦 Product listing page
+🚀 Features
 
-🖼️ Product images and descriptions
+Add, view, and manage expenses
 
-🛍️ Add to cart (basic functionality)
+Backend built with Node.js, Express, and MongoDB
 
-🎨 Responsive layout with CSS
+Frontend with React (basic UI)
 
-⚡ Basic interactivity with JavaScript
+Environment variables handled with dotenv
 
 🛠️ Tech Stack
 
-HTML5 – structure of the website
+Frontend: React
 
-CSS3 – styling and layout
+Backend: Node.js, Express
 
-JavaScript (Vanilla JS) – dynamic and interactive features
+Database: MongoDB (Mongoose for ODM)
 
+Other: CORS, dotenv
 
+📂 Project Structure
+/backend       → Express server + MongoDB connection
+/frontend      → React app (UI)
+/.env          → MongoDB connection string & environment variables
+package.json   → Dependencies & scripts
 
-🚀 How to Run
+⚙️ Setup Instructions
 
-Clone this repository:
+Clone the repo
 
-git clone https://github.com/yourusername/ecommerce-website.git
-
-Open the project folder and run the index.html file in your browser.
-
-That’s it! No extra setup is required.
-
-
-
-📚 What I Learned
-
-How to structure a website with HTML
-
-How to style pages with CSS
-
-Adding interactivity using JavaScript
-
-Basics of creating a simple front-end project from scratch
+git clone https://github.com/H-1709/expense-tracker.git
+cd expense-tracker
 
 
+Install dependencies
 
-🔮 Future Improvements
+npm install
 
-🛒 Add a working cart system with checkout
 
-🔑 User login/signup functionality
+Set up environment variables
+Create a .env file in the root directory and add:
 
-💳 Payment integration
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
 
-📱 Better responsive design
+
+Run the backend
+
+node index.js
+
+
+Run the frontend (if React is set up in /frontend)
+
+cd frontend
+npm start
+
+📖 Notes
+
+This is my first MERN project, so the focus is on learning rather than perfect design.
+
+I will improve the UI/UX and add more features in the future.
